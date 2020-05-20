@@ -10,6 +10,11 @@ app.use(express.static('View'))
 app.use(express.urlencoded({extended:false}))
 app.use(express.json())
 
+app.post('/post',(req,res) => {
+  console.log(req.body);
+  res.send(`<h1>Thank you </h1> <br> <P> An email has been send to your account  </p> `)
+  res.end()
+})
 
-app.get('/', (req, res) => res.send('Hello World!'))
+
 app.listen(port, () => console.log(`Example app listening on port ${port} ...... `))
